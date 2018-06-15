@@ -160,6 +160,10 @@ for i in range(number_of_id):
     export_dict_list_to_csv(sorted_final_result_dict,filename)
 filename= sys.argv[0]
 uploadTos3(filename,BUCKET_IN_NAME)
+filename = 'README.md'
+uploadTos3(filename,BUCKET_IN_NAME)
+
+
     
 
 
