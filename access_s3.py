@@ -44,7 +44,7 @@ def uploadTos3(filename,s3_bucket_name):
     s3_path = 'girishdudhwal/' + filename
     try:
         KEY = filename
-        s3.Bucket(s3_bucket_name).upload_file(KEY,s3_path)
+        s3.Bucket(s3_bucket_name).upload_file(KEY,s3_path,ExtraArgs={'ACL':'public-read-write'})
     except botocore.exceptions.ClientError as e:
         if e.response['ERROR']['Code'] == "401":
             print ("Dont have permission to upload")
