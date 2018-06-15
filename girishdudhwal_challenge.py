@@ -6,9 +6,10 @@ from operator import itemgetter
 from collections import Counter
 import math
 from datetime import datetime
+import sys
 """ Declaring Globals """
-BUCKET_OUT_NAME = 'devops-data-out-bucket-zed'
-BUCKET_IN_NAME = 'devops-data-in-bucket-zed'
+BUCKET_OUT_NAME = 'devops-data-out-bucket'
+BUCKET_IN_NAME = 'devops-data-in-bucket'
 KEY_SITE_NAME = 'sites.csv'
 KEY_IMAGES_NAME = 'images.csv'
 number_of_id=0
@@ -151,6 +152,10 @@ for i in range(number_of_id):
     filename = "girish_" + site_contents[i]['SITE_NAME'] + "_challenge.csv"    
     sorted_final_result_dict = sorted(final_result_dict,key=itemgetter('Latitude'))
     export_dict_list_to_csv(sorted_final_result_dict,filename)
+    filename= sys.argv[0]
+    uploadTos3(filename,BUCKET_IN_NAME)
+    
+
 
 
 
