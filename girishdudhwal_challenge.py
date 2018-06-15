@@ -1,3 +1,9 @@
+__author__ = "Girish Dudhwal"
+__credits__ = ["stackoverflow, Google, and obviously haversine equation"]
+__version__ = "1.0.1"
+__maintainer__ = "Girish Dudhwal"
+__email__ = "girishdudhwal@gmail.com"
+__status__ = "Production Ready"
 import boto3
 import botocore
 import csv
